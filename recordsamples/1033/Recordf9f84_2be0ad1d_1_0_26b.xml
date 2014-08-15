@@ -1,0 +1,31 @@
+<round time="1359984204" tourney="1023876" match="736144669" stage="1" roundid="619" gameid="1033" title="Î§ÆåÐÝÏÐÓì">
+<players>
+<player id="135191555" nickname="14646525" figure="53" score="603" rank="0" seat="0"/>
+<player id="165407548" nickname="°¢»¢¶·°¢·ï" figure="23" score="603" rank="0" seat="1"/>
+</players>
+<games>
+<game>
+<actions>
+<action name="go" data="(;GM[1]FF[4]
+SZ[19]
+PB[°¢»¢¶·°¢·ï]BR[1¶Î]
+PW[14646525]WR[1¼¶]
+KM[7.5]RE[]
+;B[dp];W[dc];B[qp];W[pc];B[ce];W[cg];B[ed];W[cd];B[bd];W[bc];B[dd]
+;W[cc];B[be];W[ec];B[fd];W[fc];B[dl];W[cj];B[bk];W[ck];B[cl];W[bj]
+;B[bl];W[ef];B[df];W[dg];B[eg];W[gd];B[ff];W[eh];B[fg];W[ej];B[ge]
+;W[hd];B[jc];W[ic];B[nc];W[lc];B[lb];W[kc];B[kb];W[jd];B[jb];W[mc]
+;B[mb];W[nd];B[od];W[oc];B[nb];W[ne];B[hb];W[ib];B[ia];W[gc];B[le]
+;W[ld];B[je];W[ie];B[ke];W[if];B[kd];W[md];B[id];W[cf];B[hc];W[de]
+;B[fe];W[hi];B[oe];W[nf];B[of];W[ng];B[qd];W[pd];B[qe];W[pe];B[pf]
+;W[qf];B[pg];W[qg];B[ph];W[qc];B[rc];W[rb];B[rd];W[sc];B[se];W[sb]
+;B[qh];W[sd];B[lh];W[ni];B[ok];W[mh];B[ki];W[lg];B[kg];W[li];B[kh]
+;W[lj];B[kj];W[lk];B[kk];W[pj];B[oj];W[oi];B[pi];W[qj];B[ri];W[pl]
+;B[rg];W[re];B[rf];W[qe];B[ol];W[ql];B[rj];W[pn];B[rl];W[rm];B[rk]
+;W[nm];B[ml];W[nl];B[om];W[on];B[nk];W[mk];B[ll];W[nj];B[nn];W[mm]
+;B[no];W[lm];B[kl];W[ih];B[qi];W[pk];B[lp];W[fq];B[hq])
+"/>
+</actions>
+</game>
+</games>
+</round>

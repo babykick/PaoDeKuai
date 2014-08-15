@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<round scoretype="2" scorebase="10" ruler="1局积分制" property="1" title="跑得快-免费岛" rulernote="每1局轮转" tourney="948194" match="1" stage="736144282" roundid="579">
+    <players count="0">
+        <player id="162624159" nickname="你猜我猜不猜00" figure="49" score="1810" rank="0" seat="0" ip="0" />
+        <player id="164387313" nickname="dsghghgfhgf" figure="64" score="2000" rank="0" seat="1" ip="0" />
+        <player id="174195952" nickname="cyy1210" figure="1" score="2030" rank="0" seat="2" ip="0" />
+    </players>
+    <games count="0">
+        <game count="0">
+            <actions>
+                <action name="GameBegin" seat="2" time="130044885338050000" />
+                <action name="DispatchCardsREQ" objects="黑K方J梅5黑J梅K红3梅T梅6梅4红9方6红A梅Q方9黑6梅7" seat="2" time="0" />
+                <action name="DispatchCardsREQ" objects="红5方7黑7黑3红K方T黑T梅8方3黑5梅9红8黑9红T红7方K" seat="1" time="0" />
+                <action name="DispatchCardsREQ" objects="黑4红4方Q方4红6黑2红J梅3梅A黑Q黑8梅J方5红Q方A方8" seat="0" time="0" />
+                <action name="PutCardRequest" objects="30" seat="2" time="119586648" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="1" name="PutCardsResult" next="15" objects="红3" point="1" seat="2" time="119586654" type="0" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="1" name="PutCardsResult" next="15" objects="方5" point="3" seat="0" time="119586657" type="0" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="1" name="PutCardsResult" next="15" objects="方K" point="11" seat="1" time="119586662" type="0" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="1" name="PutCardsResult" next="15" objects="红A" point="12" seat="2" time="119586664" type="0" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="1" name="PutCardsResult" next="2" objects="黑2" point="13" seat="0" time="119586665" type="0" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="2" objects="" point="-1" seat="1" time="119586666" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="15" objects="" point="-1" seat="2" time="119586667" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="3" name="PutCardsResult" next="15" objects="梅3黑4红4方4红6" point="2" seat="0" time="119586670" type="7" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="3" name="PutCardsResult" next="2" objects="黑3方3方7黑7红7" point="5" seat="1" time="119586676" type="7" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="15" objects="" point="-1" seat="2" time="119586678" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="3" name="PutCardsResult" next="2" objects="黑8方8方Q黑Q红Q" point="10" seat="0" time="119586679" type="7" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="2" objects="" point="-1" seat="1" time="119586681" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="15" objects="" point="-1" seat="2" time="119586682" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="2" name="PutCardsResult" next="2" objects="梅A方A" point="12" seat="0" time="119586686" type="2" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="2" objects="" point="-1" seat="1" time="119586688" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="15" objects="" point="-1" seat="2" time="119586689" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="2" name="PutCardsResult" next="2" objects="红J梅J" point="9" seat="0" time="119586689" type="2" />
+                <action mAbort="0" mDispatch0="黑4红4方Q方4红6黑2红J梅3梅A黑Q黑8梅J方5红Q方A方8" mDispatch1="红5方7黑7黑3红K方T黑T梅8方3黑5梅9红8黑9红T红7方K" mDispatch2="黑K方J梅5黑J梅K红3梅T梅6梅4红9方6红A梅Q方9黑6梅7" mLefts0="" mLefts1="红5红K方T黑T梅8黑5梅9红8黑9红T" mLefts2="黑K方J梅5黑J梅K梅T梅6梅4红9方6梅Q方9黑6梅7" mLetGoSeat="4294967295" mScores0="240" mScores1="-100" mScores2="-140" mSingleCardScore="1" mTime="130044885773440000" mWinnerSeat="0" name="FinishGameACK" />
+            </actions>
+            <results>
+                <result seat="0" score="240" />
+                <result seat="1" score="-100" />
+                <result seat="2" score="-140" />
+            </results>
+        </game>
+    </games>
+</round>

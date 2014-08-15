@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<round scoretype="2" scorebase="1" ruler="1局积分制" property="1" title="跑得快-大师岛" rulernote="每1局轮转" tourney="1102926" match="1" stage="736146102" roundid="679">
+    <players count="0">
+        <player id="160945435" nickname="联系方" figure="0" score="98450" rank="0" seat="0" ip="0" />
+        <player id="105718587" nickname="绿毒" figure="38" score="71500" rank="0" seat="1" ip="0" />
+        <player id="136921765" nickname="oknini" figure="1036120" score="48350" rank="0" seat="2" ip="0" />
+    </players>
+    <games count="0">
+        <game count="0">
+            <actions>
+                <action name="GameBegin" seat="0" time="130044879444590000" />
+                <action name="DispatchCardsREQ" objects="黑9黑6黑Q方A方6红8方4红A方3梅6梅T黑2梅J梅7方5红9" seat="2" time="0" />
+                <action name="DispatchCardsREQ" objects="方8黑J黑8梅5梅3方7梅9黑T红5方K红4梅K红T方J黑3黑K" seat="1" time="0" />
+                <action name="DispatchCardsREQ" objects="梅4梅A红3黑4黑7方Q方T方9红Q梅8红J黑5红7红6梅Q红K" seat="0" time="0" />
+                <action name="PutCardRequest" objects="20" seat="0" time="119586058" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="5" name="PutCardsResult" next="20" objects="红3黑4黑5红6红7" point="1" seat="0" time="119586071" type="1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="5" name="PutCardsResult" next="20" objects="方7方8梅9黑T黑J" point="5" seat="1" time="119586082" type="1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="5" name="PutCardsResult" next="10" objects="红8黑9梅T梅J黑Q" point="6" seat="2" time="119586083" type="1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="5" name="PutCardsResult" next="2" objects="方9方T红J方Q红K" point="7" seat="0" time="119586086" type="1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="2" objects="" point="-1" seat="1" time="119586087" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="10" objects="" point="-1" seat="2" time="119586088" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="1" name="PutCardsResult" next="10" objects="梅4" point="2" seat="0" time="119586089" type="0" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="1" name="PutCardsResult" next="10" objects="黑8" point="6" seat="1" time="119586091" type="0" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="1" name="PutCardsResult" next="10" objects="红9" point="7" seat="2" time="119586093" type="0" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="1" name="PutCardsResult" next="10" objects="红Q" point="10" seat="0" time="119586095" type="0" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="1" name="PutCardsResult" next="10" objects="方K" point="11" seat="1" time="119586098" type="0" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="1" name="PutCardsResult" next="2" objects="红A" point="12" seat="2" time="119586104" type="0" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="2" objects="" point="-1" seat="0" time="119586105" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="10" objects="" point="-1" seat="1" time="119586107" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="5" name="PutCardsResult" next="2" objects="方3方4方5梅6梅7" point="1" seat="2" time="119586108" type="1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="2" objects="" point="-1" seat="0" time="119586109" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="10" objects="" point="-1" seat="1" time="119586110" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="1" name="PutCardsResult" next="2" objects="方A" point="12" seat="2" time="119586111" type="0" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="2" objects="" point="-1" seat="0" time="119586112" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="10" objects="" point="-1" seat="1" time="119586113" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="1" name="PutCardsResult" next="2" objects="黑2" point="13" seat="2" time="119586114" type="0" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="2" objects="" point="-1" seat="0" time="119586115" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="10" objects="" point="-1" seat="1" time="119586116" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="2" name="PutCardsResult" next="2" objects="黑6方6" point="4" seat="2" time="119586116" type="2" />
+                <action mAbort="0" mDispatch0="梅4梅A红3黑4黑7方Q方T方9红Q梅8红J黑5红7红6梅Q红K" mDispatch1="方8黑J黑8梅5梅3方7梅9黑T红5方K红4梅K红T方J黑3黑K" mDispatch2="黑9黑6黑Q方A方6红8方4红A方3梅6梅T黑2梅J梅7方5红9" mLefts0="梅A黑7梅8梅Q" mLefts1="梅5梅3红5红4梅K红T方J黑3黑K" mLefts2="" mLetGoSeat="4294967295" mScores0="-2150" mScores1="-4650" mScores2="6350" mSingleCardScore="500" mTime="130044880045660000" mWinnerSeat="2" name="FinishGameACK" />
+            </actions>
+            <results>
+                <result seat="0" score="-2150" />
+                <result seat="1" score="-4650" />
+                <result seat="2" score="6350" />
+            </results>
+        </game>
+    </games>
+</round>

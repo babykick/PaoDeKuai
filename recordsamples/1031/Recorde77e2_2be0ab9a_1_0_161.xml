@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<round scoretype="2" scorebase="10" ruler="1局积分制" property="1" title="跑得快-免费岛" rulernote="每1局轮转" tourney="948194" match="1" stage="736144282" roundid="353">
+    <players count="0">
+        <player id="180383920" nickname="吴仁娟" figure="49" score="2410" rank="0" seat="0" ip="0" />
+        <player id="182424451" nickname="1051430331" figure="0" score="2200" rank="0" seat="1" ip="0" />
+        <player id="183407203" nickname="唯依1970" figure="1" score="3630" rank="0" seat="2" ip="0" />
+    </players>
+    <games count="0">
+        <game count="0">
+            <actions>
+                <action name="GameBegin" seat="2" time="130044884643530000" />
+                <action name="DispatchCardsREQ" objects="梅K黑K梅Q梅8红3红T方K梅4黑9红6黑2方9方Q红4红7红J" seat="2" time="0" />
+                <action name="DispatchCardsREQ" objects="黑5方A梅7梅6红9黑7梅9梅A红5黑6梅J方7红Q红A黑Q梅T" seat="1" time="0" />
+                <action name="DispatchCardsREQ" objects="方4红8梅3梅5黑J红K方T黑4方3方6黑8黑T方J黑3方5方8" seat="0" time="0" />
+                <action name="PutCardRequest" objects="30" seat="2" time="119586577" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="1" name="PutCardsResult" next="15" objects="方9" point="7" seat="2" time="119586587" type="0" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="1" name="PutCardsResult" next="15" objects="红K" point="11" seat="0" time="119586590" type="0" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="1" name="PutCardsResult" next="15" objects="方A" point="12" seat="1" time="119586597" type="0" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="1" name="PutCardsResult" next="2" objects="黑2" point="13" seat="2" time="119586598" type="0" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="2" objects="" point="-1" seat="0" time="119586598" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="15" objects="" point="-1" seat="1" time="119586599" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="3" name="PutCardsResult" next="2" objects="红3方Q梅K黑K方K" point="11" seat="2" time="119586605" type="7" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="2" objects="" point="-1" seat="0" time="119586606" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="15" objects="" point="-1" seat="1" time="119586607" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="7" name="PutCardsResult" next="2" objects="红6红7梅8黑9红T红J梅Q" point="4" seat="2" time="119586609" type="1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="2" objects="" point="-1" seat="0" time="119586610" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="0" name="PutCardsResult" next="15" objects="" point="-1" seat="1" time="119586611" type="-1" />
+                <action bomb0="0" bomb1="0" bomb2="0" bombseat="4294967295" count="2" name="PutCardsResult" next="15" objects="梅4红4" point="2" seat="2" time="119586612" type="2" />
+                <action mAbort="0" mDispatch0="方4红8梅3梅5黑J红K方T黑4方3方6黑8黑T方J黑3方5方8" mDispatch1="黑5方A梅7梅6红9黑7梅9梅A红5黑6梅J方7红Q红A黑Q梅T" mDispatch2="梅K黑K梅Q梅8红3红T方K梅4黑9红6黑2方9方Q红4红7红J" mLefts0="方4红8梅3梅5黑J方T黑4方3方6黑8黑T方J黑3方5方8" mLefts1="黑5梅7梅6红9黑7梅9梅A红5黑6梅J方7红Q红A黑Q梅T" mLefts2="" mLetGoSeat="4294967295" mScores0="-150" mScores1="-150" mScores2="300" mSingleCardScore="1" mTime="130044885000620000" mWinnerSeat="2" name="FinishGameACK" />
+            </actions>
+            <results>
+                <result seat="0" score="-150" />
+                <result seat="1" score="-150" />
+                <result seat="2" score="300" />
+            </results>
+        </game>
+    </games>
+</round>
