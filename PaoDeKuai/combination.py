@@ -83,15 +83,45 @@ class Bomb(Combination):
 
         
 class Sequence(Combination):
-    pass
-
-
-class SequenceOfSingle(Combinatjion):
-    pass
-
+    @classmethod
+    def extract(self, cards):
+        """
+          This method extracts the elements of same occurence by counting the elements.
+          The occurence is the max occurence count.
+        """
+        cs = self.flatten(cards)
+        cnt = Counter(cs)
+        maxCount = cnt.most_common()[0][1]
+        return ([elem for elem in cnt.keys() if cnt.get(elem) == maxCount], maxCount)
+                
+        
+    @classmethod
+    def isSeq(cls, cards):
+        """
+          Check if the seq are incredent and step by one
+        """
+       
+        if not all(Card.canInSeq(c) for c in cards):return False
+        if len(cards) < 5: return False
+        ranks = sorted(Card.getRank(c) for c in cards)
+        return all(ranks[i] + 1 == ranks[i+1] for i in range(len(ranks)-1))
+     
+    def __len__(self):
+        return len(self.cards)
+    
+class SequenceOfSingle(Sequence):
+    @classmethod
+    def validate(cls, cards):
+        return cls.isSeq(cards)
+    
+    def __cmp__(self, other):
+        return cmp(sorted(self.cards)[0], sorted(other.cards)[0])
 
 class SequenceOfTripletThree(Sequence):
-    pass
+    @classmethod
+    def validate(cls, cards):
+        cls.extract(cards)
+        return cls.isSeq(cards)
 
 class SequenceOfPairTwo(Sequence):
     pass

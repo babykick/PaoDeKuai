@@ -2,7 +2,7 @@
 
 
 class Card:
-    RANK = {'3':1, '4':2, '5':3, '6':4, '7':5, '8':6, '9':7, '10':8,
+    RANK = {'3':1, '4':2, '5':3, '6':4, '7':5, '8':6, '9':7, 'T':8,
             "J":9, "Q":10, "K":11, "A":12, "2":13}
     comparor = None
     
@@ -31,8 +31,8 @@ class Card:
         return self.getRank(self.point)
      
     @classmethod 
-    def getRank(cls, point):
-        return Card.RANK.get(point)
+    def getRank(cls, card):
+        return Card.RANK.get(cls.onlyPoint(card))
      
     @property
     def suit(self):
@@ -42,6 +42,10 @@ class Card:
     def setComparor(cls, comp):
         cls.comparor = comp
         
+    @classmethod
+    def canInSeq(cls, card):
+        point = cls.onlyPoint(card)
+        return not point in ("2",)
     
     @classmethod
     def onlyPoint(cls, card):
