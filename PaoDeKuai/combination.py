@@ -24,7 +24,9 @@ class Combination:
   
         return [Card.onlyPoint(card) for card in cards]
            
-        
+    @classmethod
+    def count(self, cards):
+        return dict(Counter(self.flatten(cards)))    
     
     @classmethod
     def validateFormat(cls, cards):
@@ -69,18 +71,40 @@ class PairTwo(Combination):
         cs = cls.flatten(cards)
         return len(cs) == 2 and cs[0] == cs[1]
         
+        
 class TripletThree(Combination):
     """
        Triplet three or Triplet three with attach
     """
     @classmethod
     def validate(cls, cards):
-        cs = cls.flatten(cards)
-        # Todo
+        values = cls.count(cards).values()
+        
+        return (len(cards) == 3 and values.count(3) == 1) or \
+               (len(cards) == 4 and values.count(3) == 1 and values.count(1)==1) or \
+               (len(cards) == 5 and values.count(3) ==1 and (values.count(1)==2 or values.count(2)==1))
+   
+    def attachment(self):
+        if len(self.cards) == 3: return "no"
+        cnt = self.count(self.cards).values()
+        if cnt.count(2) == 1: return "pair"
+        if cnt.count(1) == 1: return "single"
+        if cnt.count(1) == 2: return "two-single"
 
 class Bomb(Combination):
-    pass
-
+    @classmethod
+    def validate(cls, cards):
+        cards = cls.flatten(cards)
+        return len(cards) == 4 and cls.count(cards).values().count(4) == 1
+        
+    def attachment(self):
+        if len(self.cards) == 4: return "no"
+        cnt = self.count(self.cards).values()
+        if cnt.count(2) == 1: return "pair"
+        if cnt.count(1) == 1: return "single"
+        if cnt.count(1) == 2: return "two-single"
+        
+    
         
 class Sequence(Combination):
     @classmethod
@@ -94,35 +118,45 @@ class Sequence(Combination):
         maxCount = cnt.most_common()[0][1]
         return ([elem for elem in cnt.keys() if cnt.get(elem) == maxCount], maxCount)
                 
-        
+    
     @classmethod
     def isSeq(cls, cards):
         """
           Check if the seq are incredent and step by one
         """
-       
+        cards = cls.flatten(cards)
         if not all(Card.canInSeq(c) for c in cards):return False
-        if len(cards) < 5: return False
+        if len(cards) < 2: return False
         ranks = sorted(Card.getRank(c) for c in cards)
         return all(ranks[i] + 1 == ranks[i+1] for i in range(len(ranks)-1))
      
     def __len__(self):
-        return len(self.cards)
+        return len(self.extract(self.cards)[0])
     
 class SequenceOfSingle(Sequence):
     @classmethod
     def validate(cls, cards):
-        return cls.isSeq(cards)
-    
+        return len(cards) >= 5 and cls.isSeq(cards)
+ 
     def __cmp__(self, other):
+        if len(self) != len(other):
+            raise Exception("The sequence should be equal to compare") 
+                           
         return cmp(sorted(self.cards)[0], sorted(other.cards)[0])
 
 class SequenceOfTripletThree(Sequence):
     @classmethod
     def validate(cls, cards):
-        cls.extract(cards)
-        return cls.isSeq(cards)
-
+        seq, repeat = cls.extract(cards)
+        print seq
+        cnt = cls.count(cards).values()
+        attachnum = cnt.count(1) + cnt.count(2) * 2 
+        return (repeat == 3 and cls.isSeq(seq)) and \
+               ((attachnum == len(seq) * 2) or \
+                (attachnum == len(seq)) or \
+                 attachnum == 0)
+                
+     
 class SequenceOfPairTwo(Sequence):
     pass
         

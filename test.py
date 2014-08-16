@@ -13,8 +13,10 @@ if __name__ == "__main__":
       sc2 = SingleCard("sA")
       print sc > sc2
       pair = PairTwo(["s2","h2"])
-      """
+      
       print Sequence.extract(["sA","dA", "h3", "d3", "h4"])
       s1 = SequenceOfSingle(["sJ","sT","dQ", "hK", "d9"])
-      s2 = SequenceOfSingle(["sJ","sT","dQ", "hK", "d9"])
-      print s1 == s2
+      s2 = SequenceOfSingle(["sJ","sT","dQ", "hK", "dA", "s9"])
+      """
+      print SequenceOfTripletThree.validate(["sJ", "dJ", "hJ", "hT","hT","hT", "s5", "s4"])
+    
