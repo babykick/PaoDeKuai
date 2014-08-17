@@ -158,7 +158,14 @@ class SequenceOfTripletThree(Sequence):
                 
      
 class SequenceOfPairTwo(Sequence):
-    pass
+    @classmethod
+    def validate(cls, cards):
+        seq, repeat = cls.extract(cards)
+        return cls.isSeq(seq) and repeat==2 and len(cards) == len(seq) * 2
+    
+    def __cmp__(self, other):
+        return cmp(self.cards[0], other.cards[0])
+    
         
 
 

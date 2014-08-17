@@ -18,5 +18,5 @@ if __name__ == "__main__":
       s1 = SequenceOfSingle(["sJ","sT","dQ", "hK", "d9"])
       s2 = SequenceOfSingle(["sJ","sT","dQ", "hK", "dA", "s9"])
       """
-      print SequenceOfTripletThree.validate(["sJ", "dJ", "hJ", "hT","hT","hT", "s5", "s4"])
+      print Bomb.validate(["sJ", "dJ", "hJ","h3"])
     
