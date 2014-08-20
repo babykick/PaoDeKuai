@@ -9,7 +9,8 @@ class Combination:
             raise Exception("Format is not valid %s" % self.__class__.__name__)    
         if not self.validate(cards):
             raise Exception("Combination is not matched with %s" % self.__class__.__name__)
-        self.cards = self.flatten(cards) 
+        self.cards = cards   # Original 
+        self.fcards = self.flatten(cards) # Flattened 
    
    
     @classmethod
@@ -41,7 +42,11 @@ class Combination:
         """
           Validate the combination, return True or False
         """
-         
+    
+    @property
+    def name(self):
+        return self.__class__.__name__
+        
         
     def __cmp__(self, other):
         """
@@ -49,7 +54,7 @@ class Combination:
         """
     
     def __iter__(self):
-        return iter(self.cards)
+        return iter(self.fcards)
     
     
 class SingleCard(Combination):
@@ -58,10 +63,10 @@ class SingleCard(Combination):
         return len(cards) == 1
     
     def __cmp__(self, other):
-        return cmp(Card.getRank(self.cards[0]), Card.getRank(other.cards[0]))
+        return cmp(Card.getRank(self.fcards[0]), Card.getRank(other.cards[0]))
     
     def __repr__(self):
-        return str(self.__class__) + ": " + str(self.cards)
+        return str(self.__class__) + ": " + str(self.fcards)
 
 
 
@@ -85,8 +90,8 @@ class TripletThree(Combination):
                (len(cards) == 5 and values.count(3) ==1 and (values.count(1)==2 or values.count(2)==1))
    
     def attachment(self):
-        if len(self.cards) == 3: return "no"
-        cnt = self.count(self.cards).values()
+        if len(self.fcards) == 3: return "no"
+        cnt = self.count(self.fcards).values()
         if cnt.count(2) == 1: return "pair"
         if cnt.count(1) == 1: return "single"
         if cnt.count(1) == 2: return "two-single"
@@ -98,8 +103,8 @@ class Bomb(Combination):
         return len(cards) == 4 and cls.count(cards).values().count(4) == 1
         
     def attachment(self):
-        if len(self.cards) == 4: return "no"
-        cnt = self.count(self.cards).values()
+        if len(self.fcards) == 4: return "no"
+        cnt = self.count(self.fcards).values()
         if cnt.count(2) == 1: return "pair"
         if cnt.count(1) == 1: return "single"
         if cnt.count(1) == 2: return "two-single"
@@ -131,7 +136,7 @@ class Sequence(Combination):
         return all(ranks[i] + 1 == ranks[i+1] for i in range(len(ranks)-1))
      
     def __len__(self):
-        return len(self.extract(self.cards)[0])
+        return len(self.extract(self.fcards)[0])
     
 class SequenceOfSingle(Sequence):
     @classmethod
@@ -142,7 +147,7 @@ class SequenceOfSingle(Sequence):
         if len(self) != len(other):
             raise Exception("The sequence should be equal to compare") 
                            
-        return cmp(sorted(self.cards)[0], sorted(other.cards)[0])
+        return cmp(sorted(self.fcards)[0], sorted(other.cards)[0])
 
 class SequenceOfTripletThree(Sequence):
     @classmethod
@@ -163,7 +168,7 @@ class SequenceOfPairTwo(Sequence):
         return cls.isSeq(seq) and repeat==2 and len(cards) == len(seq) * 2
     
     def __cmp__(self, other):
-        return cmp(self.cards[0], other.cards[0])
+        return cmp(self.fcards[0], other.cards[0])
     
         
 

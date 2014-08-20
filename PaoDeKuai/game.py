@@ -28,9 +28,10 @@ class Game:
             curPlayer.showHand()
             while 1:
                print "what cards do you discard: ",
-               pattern, cards  = curPlayer.getInput() or (None, None)
-               if pattern and cards:
-                  print pattern
+               combination = curPlayer.getInput()
+               if combination:
+                  print combination.name
+                  curPlayer.discard(combination.cards)
                   break
                else:
                   print "Input invalid"

@@ -25,14 +25,13 @@ class Player:
         return self.name
     
     def getInput(self):
-        cards = raw_input().split()
+        cards = [Card(c) for c in raw_input().split()]
         pattern = self.hand.judgePattern(cards)
-        if pattern:
-            return pattern, [Card(c) for c in cards]
-        return None
-        
-
-        
+        return pattern
+    
+    def discard(self, cards):
+        self.hand.removeCards(cards)
+          
 class HumanPlayer(Player):
     def playTurn(self):
         self.playCards(self.input)

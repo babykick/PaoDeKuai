@@ -55,14 +55,18 @@ class Hand:
        
     def addCard(self, card):
         self.cards.append(card)
-
+     
     def addCards(self, cards):
         self.cards.extend(cards)
 
+    def removeCards(self, cards):
+        for c in cards:
+            self.cards.remove(c)
+        
     def judgePattern(self, cards):
-        for p in self.patterns:
-            if p.validate(cards):
-                return p
+        for combCls in Hand.patterns:
+            if combCls.validate(cards):
+                return combCls(cards)
         else:
             return None
      
