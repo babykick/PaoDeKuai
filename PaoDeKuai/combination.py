@@ -148,7 +148,6 @@ class SequenceOfTripletThree(Sequence):
     @classmethod
     def validate(cls, cards):
         seq, repeat = cls.extract(cards)
-        print seq
         cnt = cls.count(cards).values()
         attachnum = cnt.count(1) + cnt.count(2) * 2 
         return (repeat == 3 and cls.isSeq(seq)) and \

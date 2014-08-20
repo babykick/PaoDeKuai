@@ -1,21 +1,21 @@
 from game import *
-from Engine import *
+from hand import Hand
+from card import Card
 
 class Player:
     def __init__(self, name):
         self.name = name
+        self.hand = None
+        self.setup()
+    
+    def setup(self):
+        pass
 
-    def playCards(self, cardsStr):
-        self.hand.play(cardsStr)
-
-    def addHand(self, hand):
+    def giveHand(self, hand):
         self.hand = hand
-        
-    def getHand(self):
-        return self.hand
 
     def showHand(self):
-        print self.hand.toString()
+        print self.hand
         
     def playTurn(self):
         raise NotImplementedError
@@ -23,6 +23,14 @@ class Player:
     @property
     def Name(self):
         return self.name
+    
+    def getInput(self):
+        cards = raw_input().split()
+        pattern = self.hand.judgePattern(cards)
+        if pattern:
+            return pattern, [Card(c) for c in cards]
+        return None
+        
 
         
 class HumanPlayer(Player):
@@ -35,11 +43,9 @@ class HumanPlayer(Player):
     def __repr__(self):
         return "HumanPlayer('%s')" % self.Name
 
-class ComputerPlayer(Player):
-    def __init__(self, name):
-        Player.__init__(self, name)
+class ComputerPlayer(Player):  
+    def setup(self):
         self.brain = RunFastAIEngine()
-        
         
     def think(self):
         #self.brain.thinkAGoodPlay(curSituation)

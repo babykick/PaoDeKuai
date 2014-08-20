@@ -4,7 +4,8 @@
 class Card:
     RANK = {'3':1, '4':2, '5':3, '6':4, '7':5, '8':6, '9':7, 'T':8,
             "J":9, "Q":10, "K":11, "A":12, "2":13}
-    comparor = None
+    SUIT = ["s", "c", "h", "d"]
+    JOKERS = ["bj", "rj"]
     
     def __init__(self, cardName=None, suit=None, point=None):
         s, p = None, None
@@ -19,8 +20,8 @@ class Card:
         
         
     @classmethod
-    def validate(self, suit, point):
-        return (point in Card.RANK.keys()) and (suit in ["s", "c", "h", "d"])
+    def validate(cls, suit, point):
+        return (point in Card.RANK.keys()) and (suit in Card.SUIT)
         
     @property    
     def point(self):
