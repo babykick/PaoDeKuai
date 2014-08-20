@@ -32,6 +32,7 @@ class Game:
                if combination:
                   print combination.name
                   curPlayer.discard(combination.cards)
+                  curPlayer.showHand()
                   break
                else:
                   print "Input invalid"
