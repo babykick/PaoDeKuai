@@ -1,3 +1,3 @@
 PaoDeKuai
 =========
-**PaoDeKuai is a Chinese poker game who plays out all the hands firstly wins.**
+**PaoDeKuai is a Chinese poker game who plays out all the cards firstly wins.**
