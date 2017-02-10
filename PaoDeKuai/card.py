@@ -1,7 +1,7 @@
 
 
 
-class Card:
+class Card(object):
     RANK = {'3':1, '4':2, '5':3, '6':4, '7':5, '8':6, '9':7, 'T':8,
             "J":9, "Q":10, "K":11, "A":12, "2":13}
     SUIT = ["s", "c", "h", "d"]
@@ -15,8 +15,8 @@ class Card:
            s, p = suit, point
         if not self.validate(suit=s, point=p):
             raise Exception("Card name is not valid")
-        self.suit = s
-        self.point = p
+        self._suit = s
+        self._point = p
         
         
     @classmethod
@@ -25,7 +25,7 @@ class Card:
         
     @property    
     def point(self):
-        return self.point
+        return self._point
     
     @property
     def rank(self):
@@ -37,7 +37,7 @@ class Card:
      
     @property
     def suit(self):
-        return self.suit
+        return self._suit
     
     @classmethod
     def setComparor(cls, comp):
@@ -60,8 +60,17 @@ class Card:
          return None
         
     def __repr__(self):
-        return self.suit + self.point
+        return "<Card '%s'>" % (self.suit + self.point)
 
-    def __cmp__(self, otherCard):
-        return cmp(self.rank, otherCard.rank)
-        
+    # def __cmp__(self, otherCard):
+    #     return cmp(self.rank, otherCard.rank)
+
+    def __le__(self, other):
+        pass
+
+    def __gt__(self, other):
+        pass
+
+    def __eq__(self, other):
+        pass
+

@@ -1,8 +1,8 @@
-from game import *
-from hand import Hand
-from card import Card
+from .game import *
+from .hand import Hand
+from .card import Card
 
-class Player:
+class Player(object):
     def __init__(self, name):
         self.name = name
         self.hand = None
@@ -11,21 +11,21 @@ class Player:
     def setup(self):
         pass
 
-    def giveHand(self, hand):
+    def play_cards(self):
+        raise NotImplementedError
+
+    def give_hand(self, hand):
         self.hand = hand
 
-    def showHand(self):
-        print self.hand
+    def show_hand(self):
+        print(self.hand)
         
-    def playTurn(self):
+    def play_turn(self):
         raise NotImplementedError
-        
-    @property
-    def Name(self):
-        return self.name
+
     
-    def getInput(self):
-        cards = [Card(c) for c in raw_input().split()]
+    def get_input(self):
+        cards = [Card(c) for c in input().split()]
         pattern = self.hand.judgePattern(cards)
         return pattern
     
@@ -33,14 +33,14 @@ class Player:
         self.hand.removeCards(cards)
           
 class HumanPlayer(Player):
-    def playTurn(self):
-        self.playCards(self.input)
+    def play_turn(self):
+        self.play_cards(self.input)
     
-    def setInput(self,input):
+    def set_input(self,input):
         self.input = input
 
     def __repr__(self):
-        return "HumanPlayer('%s')" % self.Name
+        return "<HumanPlayer('%s')>" % self.name
 
 class ComputerPlayer(Player):  
     def setup(self):
@@ -48,14 +48,14 @@ class ComputerPlayer(Player):
         
     def think(self):
         #self.brain.thinkAGoodPlay(curSituation)
-        print 'computer %s have a think...' % self.name
+        print('computer %s have a think...' % self.name)
          
-    def playTurn(self):
+    def play_turn(self):
         self.think()
         #self.playCards()
-        print "computer %s play" % self.name
+        print("computer %s play" % self.name)
         
     def __repr__(self):
-        return "ComputerPlayer('%s')" % self.Name
+        return "<ComputerPlayer('%s')>" % self.name
     
 

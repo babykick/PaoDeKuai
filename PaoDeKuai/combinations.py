@@ -1,11 +1,15 @@
 from collections import Counter
-from card import Card
 
-class Combination:
+from.utils import compare
+from .card import Card
+
+
+
+class Combination(object):
     def __init__(self, cards=None):
-        if isinstance(cards, basestring) or isinstance(cards, Card): # Single card case
+        if isinstance(cards, str) or isinstance(cards, Card): # Single card case
             cards = [cards]
-        if not self.validateFormat(cards):
+        if not self.validate_format(cards):
             raise Exception("Format is not valid %s" % self.__class__.__name__)    
         if not self.validate(cards):
             raise Exception("Combination is not matched with %s" % self.__class__.__name__)
@@ -14,7 +18,7 @@ class Combination:
    
    
     @classmethod
-    def flatten(self, cards):
+    def flatten(cls, cards):
         """
            flatten the card objects list to simple card point list,
            leave only the card point
@@ -26,11 +30,11 @@ class Combination:
         return [Card.onlyPoint(card) for card in cards]
            
     @classmethod
-    def count(self, cards):
-        return dict(Counter(self.flatten(cards)))    
+    def count(cls, cards):
+        return dict(Counter(cls.flatten(cards)))
     
     @classmethod
-    def validateFormat(cls, cards):
+    def validate_format(cls, cards):
         """
           Check the format of cards representations
         """
@@ -38,7 +42,7 @@ class Combination:
         
     
     @classmethod    
-    def validate(self, cards):
+    def validate(cls, cards):
         """
           Validate the combination, return True or False
         """
@@ -57,17 +61,29 @@ class Combination:
         return iter(self.fcards)
     
     
+    def __len__(self):
+        return len(self.cards)
+
+
 class SingleCard(Combination):
     @classmethod
-    def validate(self, cards):
+    def validate(cls, cards):
         return len(cards) == 1
     
     def __cmp__(self, other):
-        return cmp(Card.getRank(self.fcards[0]), Card.getRank(other.cards[0]))
+        return compare(self.cards[0].rank, other.cards[0].rank)
     
     def __repr__(self):
         return str(self.__class__) + ": " + str(self.fcards)
 
+    def __le__(self, other):
+        pass
+
+    def __gt__(self, other):
+        pass
+
+    def __eq__(self, other):
+        pass
 
 
 class PairTwo(Combination):
@@ -75,7 +91,15 @@ class PairTwo(Combination):
     def validate(cls, cards):
         cs = cls.flatten(cards)
         return len(cs) == 2 and cs[0] == cs[1]
-        
+
+    def __le__(self, other):
+        pass
+
+    def __gt__(self, other):
+        pass
+
+    def __eq__(self, other):
+        pass
         
 class TripletThree(Combination):
     """
@@ -109,16 +133,24 @@ class Bomb(Combination):
         if cnt.count(1) == 1: return "single"
         if cnt.count(1) == 2: return "two-single"
         
-    
+    def __le__(self, other):
+        pass
+
+    def __gt__(self, other):
+        pass
+
+    def __eq__(self, other):
+        pass
+
         
 class Sequence(Combination):
     @classmethod
-    def extract(self, cards):
+    def extract(cls, cards):
         """
           This method extracts the elements of same occurence by counting the elements.
           The occurence is the max occurence count.
         """
-        cs = self.flatten(cards)
+        cs = cls.flatten(cards)
         cnt = Counter(cs)
         maxCount = cnt.most_common()[0][1]
         return ([elem for elem in cnt.keys() if cnt.get(elem) == maxCount], maxCount)
@@ -136,19 +168,42 @@ class Sequence(Combination):
         return all(ranks[i] + 1 == ranks[i+1] for i in range(len(ranks)-1))
      
     def __len__(self):
-        return len(self.extract(self.fcards)[0])
+       return len(self.extract(self.fcards)[0])
+    
+    # def __cmp__(self, other):
+    #     assert len(self) == len(other)
+    #     seq1, _ = self.extract(self.cards)
+    #     seq2, _ = self.extract(other.cards)
+    #     return compare(seq1[0], seq2[0])
+
+    def __le__(self, other):
+        pass
+
+    def __gt__(self, other):
+        pass
+
+    def __eq__(self, other):
+        pass
     
 class SequenceOfSingle(Sequence):
     @classmethod
     def validate(cls, cards):
         return len(cards) >= 5 and cls.isSeq(cards)
  
-    def __cmp__(self, other):
-        if len(self) != len(other):
-            raise Exception("The sequence should be equal to compare") 
-                           
-        return cmp(sorted(self.fcards)[0], sorted(other.cards)[0])
+    # def __cmp__(self, other):
+    #     assert len(self) == len(other)
+    #     return compare(sorted(self.fcards)[0], sorted(other.cards)[0])
 
+    def __le__(self, other):
+        pass
+
+    def __gt__(self, other):
+        pass
+
+    def __eq__(self, other):
+        pass
+
+     
 class SequenceOfTripletThree(Sequence):
     @classmethod
     def validate(cls, cards):
@@ -166,10 +221,17 @@ class SequenceOfPairTwo(Sequence):
     def validate(cls, cards):
         seq, repeat = cls.extract(cards)
         return cls.isSeq(seq) and repeat==2 and len(cards) == len(seq) * 2
-    
-    def __cmp__(self, other):
-        return cmp(self.fcards[0], other.cards[0])
-    
-        
+    #
+    # def __cmp__(self, other):
+    #     return compare(self.fcards[0], other.cards[0])
+    #
+    def __le__(self, other):
+        pass
+
+    def __gt__(self, other):
+        pass
+
+    def __eq__(self, other):
+        pass
 
 
